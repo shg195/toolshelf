@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>toolshelf — ブラウザの中で完結する、小さな道具棚</title>
+<meta name="description" content="ブラウザの中だけで動く小さな道具を置いています。読み込んだデータはこの画面から出ません。">
+<style>
+  :root{
+    --bg:#fbfbf9; --fg:#1a1a18; --dim:#6b6b66; --line:#e2e2dc;
+    --card:#ffffff; --accent:#2f6f4f;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#131313; --fg:#e8e8e4; --dim:#9a9a94; --line:#2b2b2b;
+      --card:#1b1b1a; --accent:#7fc0a0;
+    }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--bg); color:var(--fg);
+    font-family:system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+    line-height:1.75; -webkit-text-size-adjust:100%;
+  }
+  .wrap{max-width:44rem;margin:0 auto;padding:2.5rem 1.25rem 4rem}
+  header{margin-bottom:2.5rem}
+  h1{font-size:1.9rem;margin:0 0 .4rem;letter-spacing:-.01em}
+  .en{color:var(--dim);font-size:.85rem;margin:0 0 1.2rem}
+  .lead{font-size:1.05rem;margin:0 0 1.5rem}
+  .principle{
+    border-left:3px solid var(--accent);
+    padding:.85rem 0 .85rem 1rem;
+    margin:0 0 2.5rem;
+    color:var(--fg);
+  }
+  .principle strong{color:var(--accent)}
+  .principle small{display:block;color:var(--dim);font-size:.85rem;margin-top:.4rem}
+  h2{font-size:1.05rem;margin:2.5rem 0 1rem;padding-bottom:.4rem;border-bottom:1px solid var(--line)}
+  .item{
+    display:block;background:var(--card);border:1px solid var(--line);
+    border-radius:.6rem;padding:1.1rem 1.2rem;margin-bottom:.9rem;
+    text-decoration:none;color:inherit;
+  }
+  .item:hover{border-color:var(--accent)}
+  .item .t{font-weight:700;margin-bottom:.3rem}
+  .item .d{color:var(--dim);font-size:.9rem;line-height:1.65}
+  ul.soon{list-style:none;padding:0;margin:0;color:var(--dim)}
+  ul.soon li{padding:.4rem 0;border-bottom:1px dashed var(--line);font-size:.92rem}
+  ul.soon li:last-child{border-bottom:0}
+  footer{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--line);color:var(--dim);font-size:.9rem}
+  footer a{color:var(--accent)}
+  .links{margin-top:.8rem}
+  .links a{margin-right:1.1rem;white-space:nowrap}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>toolshelf</h1>
+  <p class="en">Small browser-only tools. Nothing you load ever leaves the page.</p>
+  <p class="lead">ブラウザの中だけで動く、小さな道具を置いています。<br>使うのは無料で、登録もいりません。</p>
+
+  <div class="principle">
+    <strong>読み込んだデータは、この画面から出ません。</strong>
+    <small>サーバーを持っていないので、送る先がありません。ファイルはあなたのブラウザの中で処理されて、そこで終わります。<br>※AIを使う道具は、あなた自身のAPIキーを入れる方式です（こちらでは預かりません）。</small>
+  </div>
+</header>
+
+<h2>いま置いてあるもの</h2>
+
+<a class="item" href="https://github.com/shg195/toolshelf/blob/main/kit/%E3%83%81%E3%83%A3%E3%83%83%E3%83%88%E7%89%88%E3%82%AD%E3%83%83%E3%83%88.md">
+  <div class="t">AIに前提を覚えさせるキット（チャット版）</div>
+  <div class="d">ChatGPT・Claude・Gemini の<b>チャットにそのまま貼って使えます</b>。無料。<br>毎回同じ説明を繰り返す・話が続かない・勝手に決められる——を、貼る文章で潰します。<br><b>わざと不完全にしてあります。</b>空欄はあなたのAIが、あなたの話を聞いて埋めます。</div>
+</a>
+
+<a class="item" href="https://github.com/shg195/toolshelf/tree/main/kit">
+  <div class="t">Claude Code スターターキット（不完全版）</div>
+  <div class="d">上のチャット版と同じ考え方を、コマンドラインの Claude Code 用に。CLAUDE.mdの雛形と skill 3本（初期設定・開始時の現在地・終了時の引き継ぎ）。<br>本格的に使う人向けです。</div>
+</a>
+
+<h2>これから並ぶもの</h2>
+<ul class="soon">
+  <li>AIコーディング課金の事前試算 — 実行する前に、いくら請求されるかを出す</li>
+  <li>入金と請求書の突合 — 参照情報のない一括入金が、どの請求書の組合せなのかを当てる</li>
+  <li>Zapierのタスク消費の試算 — 上位プランに押し出される前に気づくため</li>
+  <li>カード明細CSVの整形 — 会計ソフトが受け取れる形に直す</li>
+</ul>
+<p style="color:var(--dim);font-size:.88rem">作った順に並びます。約束した日付はありません。</p>
+
+<footer>
+  学生です。自分が毎日困ったところを道具にして、実際に測ったことだけ書きます。
+  <div class="links">
+    <a href="https://github.com/shg195">GitHub</a>
+    <a href="https://www.tiktok.com/@kosaka_000">TikTok</a>
+    <a href="https://shg195.github.io/portfolio/">これまで作ったもの</a>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>
